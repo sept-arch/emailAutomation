@@ -6,7 +6,7 @@
  - The format is followed verbatim, so by switching keywords such as mentions of the company name, emails could be reduced to full conversations with company contacts
 ## Objective
 - Web application that automates the email sending process
-- - Specifically, manually gather company, name, email, and parse data with pandas
+  - Specifically, manually gather company, name, email, and parse data with pandas
   - Provide a simple UI to select a recruiter from list
 ## Stack
  - Backend: Python, Pandas, Google API
