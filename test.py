@@ -21,7 +21,7 @@ def getGmailCredentials():
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
+            flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPE)
             creds = flow.run_local_server(port=0)
             #save token if ran again
             with open('token.json,', 'w') as token: #opens tokens (credentials) file with write permissions
@@ -29,11 +29,14 @@ def getGmailCredentials():
     return creds
     
 
-email = input("SENDER EMAIL: ") # Sender's email address
-receiver_email = input("Receiver EMAIL: ") # Receiver's email address
+email = input("Type your Email: ") # Sender's email address
+receiver_email = input("Type the recipient's Email: ") # Receiver's email address; eventually to be a list using pandas
 
-subject = input("SUBJECT: ") #Subject of email
-message = input("MESSAGE: ") #Contents of email
+subject = input("Please type the subject of the email: ") #Subject of email
+message = input("Please type the contents of the email: ") #Contents of email
+
+creds = getGmailCredentials() #Logs into gmail
+service = build('gmail', 'v1', credentials=creds) #connects to gmail
 
 text = f"Subject: {subject}\n\n{message}" #fstring allows for special formatting
 
