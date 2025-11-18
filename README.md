@@ -12,5 +12,5 @@
  - Backend: Python, Pandas, Google API
  - Frontend: Streamlit
 ## Notes
-- Only to be used for recruiters not previously contacted
+- Usage of the script is at the deployer's discretion
    
